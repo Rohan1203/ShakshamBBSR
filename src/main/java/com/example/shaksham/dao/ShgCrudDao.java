@@ -35,5 +35,17 @@ public class ShgCrudDao<INT> {
 		return jdbcTemplate.update(query,new Object[] {shgId,shgName,address,blockName,district,state,pincode,mobileNumber,
 						noOfMember,aadharNumber,accountNumber,ifscCode,currentStatus});	
 	}
+	/*
+	 * Author Supriya
+	 */
+	public int deleteShg(String shgId)
+	{
+		Shg s = new Shg(); 
+        s.setShgId(shgId);
+		String sql = "delete from shg where shgId = ?;";
+		return jdbcTemplate.update(sql, new Object[] {s.getShgId()});
+	      
+	      
+	}
 
 }

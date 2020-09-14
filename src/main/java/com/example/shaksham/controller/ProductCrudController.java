@@ -2,6 +2,7 @@ package com.example.shaksham.controller;
 
 import java.security.Timestamp;
 import java.sql.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
 
 import com.example.shaksham.dao.ProductCrudDao;
 
@@ -53,6 +55,23 @@ public class ProductCrudController<Int> {
 		return productId;
 		
 	}*/
+	
+/*
+ * Author Supriya
+ */
+	@RequestMapping(value="/prod/{pid}",method = RequestMethod.GET)
+	public String productDelete(@PathVariable int pid) {
+		int a;
+		a=product.deleteProduct(pid);
+		if(a==1)
+		return "Delete Successfull";
+		else
+		return "Delete unsuccessful";
+		
+	}
+	
+	
+	
 	
 
 }

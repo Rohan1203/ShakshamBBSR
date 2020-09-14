@@ -2,6 +2,7 @@ package com.example.shaksham.controller;
 
 import java.math.BigInteger;
 import java.security.Timestamp;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
 
 import com.example.shaksham.dao.ShgCrudDao;
 
@@ -49,6 +51,20 @@ public class ShgCrudController<INT> {
         }
 			
 		}
+	/*
+	 * Author Supriya
+	 */
+	@RequestMapping(value="/shggg/{sid}",method = RequestMethod.GET)
+	public String shgDelete(@PathVariable String sid) {
+		int a;
+		a=shg.deleteShg(sid);
+		if(a==1)
+		return "Delete Successfull";
+		else
+		return "Delete unsuccessful";
+		
+	}
+	
 	
 
 }
