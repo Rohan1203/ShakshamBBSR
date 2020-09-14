@@ -16,7 +16,8 @@ public class ShakshamApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ShakshamApplication.class, args);
-		System.out.print(" Project Initialized..."); 
+		System.out.print("Project Initialized...");
+		System.out.print("Test Commit...");
 	}
 	
 	
