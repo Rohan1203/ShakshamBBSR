@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.example.shaksham.dao.ShgCrudDao;
+import com.example.shaksham.model.Shg;
 
 
 
@@ -64,6 +65,17 @@ public class ShgCrudController<INT> {
 		return "Delete unsuccessful";
 		
 	}
+	
+	/*
+	 * Author Puspa 
+	 *
+	 */
+	@GetMapping(path= "/shgrequests")
+	public List<Shg> allShg(){
+		return shg.getAllRequests();
+		
+	}
+
 	
 	
 
