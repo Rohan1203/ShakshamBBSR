@@ -28,13 +28,13 @@ public class ShgCrudDao<INT> {
 	 */
 	public int addShg(String shgId, String shgName, String address, String blockName, String district, String state,
 			INT pincode, BigInteger mobileNumber, INT noOfMember, BigInteger aadharNumber, BigInteger accountNumber,
-			String ifscCode,String currentStatus) {
+			String ifscCode,String currentStatus,String shgEmail) {
 		
-		String query = "INSERT INTO shg(shgId,shgName,address,blockName,district,state,pincode,mobileNumber,noOfMember,aadharNumber,accountNumber,ifscCode,date,currentStatus) "
-				+ "    Values=(?,?,?,?,?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP,?);";
+		String query ="INSERT INTO shg(shgId,shgName,address,blockName,district,state,pincode,mobileNumber,noOfMember,aadharNumber,accountNumber,ifscCode,date,currentStatus,shgEmail) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP,?,?);";
 		return jdbcTemplate.update(query,new Object[] {shgId,shgName,address,blockName,district,state,pincode,mobileNumber,
-						noOfMember,aadharNumber,accountNumber,ifscCode,currentStatus});	
+						noOfMember,aadharNumber,accountNumber,ifscCode,currentStatus,shgEmail});	
 	}
+	
 	/*
 	 * Author Supriya
 	 */

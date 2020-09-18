@@ -1,156 +1,162 @@
 package com.example.shaksham.model;
 
+import java.math.BigInteger;
+import java.security.Timestamp;
+
+import org.springframework.stereotype.Component;
+@Component
 public class Shg {
 	
-	private String shgName;
 	private String shgId;
-//	private String email;
+	private String shgName;
 	private String address;
 	private String blockName;
 	private String district;
 	private String state;
-	private String pincode;
-	private String contactNumber;
-	private String noOfMember;
-	private String aadharNumber;
-	private String accountNumber;
+	private int pincode;
+	private BigInteger mobileNumber;
+	private int noOfMember;
+	private BigInteger aadharNumber;
+	private BigInteger accountNumber;
 	private String ifscCode;
-	private String registrationDate;
+	private Timestamp date;
 	private String currentStatus;
-	
+	private String shgEmail;
 	public Shg() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-
-	public Shg(String shgName, String shgId, String address, String blockName, String district, String state,
-			String pincode, String contactNumber, String noOfMember, String aadharNumber, String accountNumber,
-			String ifscCode, String registrationDate, String currentStatus) {
-		this.shgName = shgName;
+	public Shg(String shgId, String shgName, String address, String blockName, String district, String state,
+			int pincode, BigInteger mobileNumber, int noOfMember, BigInteger aadharNumber, BigInteger accountNumber,
+			String ifscCode, Timestamp date, String currentStatus, String shgEmail) {
+		super();
 		this.shgId = shgId;
+		this.shgName = shgName;
 		this.address = address;
 		this.blockName = blockName;
 		this.district = district;
 		this.state = state;
 		this.pincode = pincode;
-		this.contactNumber = contactNumber;
+		this.mobileNumber = mobileNumber;
 		this.noOfMember = noOfMember;
 		this.aadharNumber = aadharNumber;
 		this.accountNumber = accountNumber;
 		this.ifscCode = ifscCode;
-		this.registrationDate = registrationDate;
+		this.date = date;
 		this.currentStatus = currentStatus;
+		this.shgEmail = shgEmail;
 	}
-
-	public String getShgName() {
-		return shgName;
-	}
-
-	public void setShgName(String shgName) {
-		this.shgName = shgName;
-	}
-
 	public String getShgId() {
 		return shgId;
 	}
-
 	public void setShgId(String shgId) {
 		this.shgId = shgId;
 	}
-
+	public String getShgName() {
+		return shgName;
+	}
+	public void setShgName(String shgName) {
+		this.shgName = shgName;
+	}
 	public String getAddress() {
 		return address;
 	}
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
 	public String getBlockName() {
 		return blockName;
 	}
-
 	public void setBlockName(String blockName) {
 		this.blockName = blockName;
 	}
-
 	public String getDistrict() {
 		return district;
 	}
-
 	public void setDistrict(String district) {
 		this.district = district;
 	}
-
 	public String getState() {
 		return state;
 	}
-
 	public void setState(String state) {
 		this.state = state;
 	}
-
-	public String getPincode() {
+	public int getPincode() {
 		return pincode;
 	}
-
-	public void setPincode(String pincode) {
+	public void setPincode(int pincode) {
 		this.pincode = pincode;
 	}
-
-	public String getContactNumber() {
-		return contactNumber;
+	public BigInteger getMobileNumber() {
+		return mobileNumber;
 	}
-
-	public void setContactNumber(String contactNumber) {
-		this.contactNumber = contactNumber;
+	public void setMobileNumber(BigInteger mobileNumber) {
+		this.mobileNumber = mobileNumber;
 	}
-
-	public String getNoOfMember() {
+	public int getNoOfMember() {
 		return noOfMember;
 	}
-
-	public void setNoOfMember(String noOfMember) {
+	public void setNoOfMember(int noOfMember) {
 		this.noOfMember = noOfMember;
 	}
-
-	public String getAadharNumber() {
+	public BigInteger getAadharNumber() {
 		return aadharNumber;
 	}
-
-	public void setAadharNumber(String aadharNumber) {
+	public void setAadharNumber(BigInteger aadharNumber) {
 		this.aadharNumber = aadharNumber;
 	}
-
-	public String getAccountNumber() {
+	public BigInteger getAccountNumber() {
 		return accountNumber;
 	}
-
-	public void setAccountNumber(String accountNumber) {
+	public void setAccountNumber(BigInteger accountNumber) {
 		this.accountNumber = accountNumber;
 	}
-
 	public String getIfscCode() {
 		return ifscCode;
 	}
-
 	public void setIfscCode(String ifscCode) {
 		this.ifscCode = ifscCode;
 	}
-
-	public String getRegistrationDate() {
-		return registrationDate;
+	public Timestamp getDate() {
+		return date;
 	}
-
-	public void setRegistrationDate(String registrationDate) {
-		this.registrationDate = registrationDate;
+	public void setDate(Timestamp date) {
+		this.date = date;
 	}
-
 	public String getCurrentStatus() {
 		return currentStatus;
 	}
-
 	public void setCurrentStatus(String currentStatus) {
 		this.currentStatus = currentStatus;
 	}
-
+	public String getShgEmail() {
+		return shgEmail;
+	}
+	public void setShgEmail(String shgEmail) {
+		this.shgEmail = shgEmail;
+	}
+	
 	
 }
+
+
+
+
+/*create table shg(
+shgName varchar(40),
+shgId varchar(40),
+address varchar(40),
+blockName varchar(40),
+district varchar(40),
+state varchar(40),
+pincode int,
+mobileNumber bigint,
+noOfMember int,
+aadharNumber bigint,
+accountNumber bigint,
+ifscCode varchar(40),
+registrationDate date default (date(current_timestamp)),
+currentStatus varchar(10)
+);*/
+ 

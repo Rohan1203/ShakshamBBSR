@@ -37,21 +37,22 @@ public class ShgCrudController<INT> {
 	}
 	
 	@RequestMapping(value="/addshg/{shgId}/{shgName}/{address}/{blockName}/{district}/{state}/{pincode}/"
-			+ "{mobileNumber}/{noOfMember}/{aadharNumber}/{accountNumber}/{ifscCode}/{currentStatus}",method=RequestMethod.POST)
+			+ "{mobileNumber}/{noOfMember}/{aadharNumber}/{accountNumber}/{ifscCode}/{currentStatus}/{shgEmail}")
 	@ResponseBody
 	public String addshg(@PathVariable String shgId,@PathVariable String shgName,@PathVariable String address,@PathVariable String blockName,@PathVariable String district,
 			@PathVariable String state,@PathVariable INT pincode,@PathVariable BigInteger mobileNumber,@PathVariable INT noOfMember,
 			@PathVariable BigInteger aadharNumber,@PathVariable BigInteger accountNumber,@PathVariable String ifscCode,
-			@PathVariable String currentStatus) {
+			@PathVariable String currentStatus,@PathVariable String shgEmail) {
 				
 		if(shg.addShg(shgId,shgName,address,blockName,district,state,pincode,mobileNumber,
-				noOfMember,aadharNumber,accountNumber,ifscCode,currentStatus)>=1) {
+				noOfMember,aadharNumber,accountNumber,ifscCode,currentStatus,shgEmail)>=1) {
 			 return "Shg Addition request sent Successfully.You will receive a conformation email soon";
         }else{
             return "Unsuccessfull!!!Something went wrong !pls check the details again";
         }
 			
 		}
+	
 	/*
 	 * Author Supriya
 	 */
