@@ -9,27 +9,29 @@ import org.springframework.stereotype.Component;
 public class Product {
 	
 	private int productId;
-	private int catId;
+	private String catName;
 	private String productName;
 	private String description;
 	private double price;
 	private Timestamp date;
 	private String shgId;
+	private int noOfAvailability;
 	
 	public Product() {
 		
 	}
-
-	public Product(int productId, int catId, String productName, String description, double price, Timestamp date,
-			String shgId) {
+	
+	public Product(int productId, String catName, String productName, String description, double price, Timestamp date,
+			String shgId, int noOfAvailability) {
 		super();
 		this.productId = productId;
-		this.catId = catId;
+		this.catName = catName;
 		this.productName = productName;
 		this.description = description;
 		this.price = price;
 		this.date = date;
 		this.shgId = shgId;
+		this.noOfAvailability = noOfAvailability;
 	}
 
 	public int getProductId() {
@@ -40,12 +42,12 @@ public class Product {
 		this.productId = productId;
 	}
 
-	public int getCatId() {
-		return catId;
+	public String getCatName() {
+		return catName;
 	}
 
-	public void setCatId(int catId) {
-		this.catId = catId;
+	public void setCatName(String catName) {
+		this.catName = catName;
 	}
 
 	public String getProductName() {
@@ -87,5 +89,17 @@ public class Product {
 	public void setShgId(String shgId) {
 		this.shgId = shgId;
 	}
+
+	public int getNoOfAvailability() {
+		return noOfAvailability;
+	}
+
+	public void setNoOfAvailability(int noOfAvailability) {
+		this.noOfAvailability = noOfAvailability;
+	}
+	
+
+	
+	
 	
 }

@@ -34,14 +34,14 @@ public class ProductCrudController<Int> {
 		return "Welcome to ShakSham";
 	}
 	
-	@RequestMapping("/addProduct/{productId}/{catId}/{productName}/{description}/{price}/{shgId}")
+	@RequestMapping("/addProduct/{catName}/{productName}/{description}/{price}/{shgId}/{noOfAvailability}")
     @ResponseBody
-    public String addProduct(@PathVariable Int productId,@PathVariable Int catId,
+    public String addProduct(@PathVariable String catName,
     		@PathVariable String productName,@PathVariable String description,
-    		@PathVariable Double price,@PathVariable String shgId){
+    		@PathVariable Double price,@PathVariable String shgId,@PathVariable Int noOfAvailability){
 		
 		
-       if(product.addProduct(productId,catId,productName,description,price,shgId) >= 1){
+       if(product.addProduct(catName,productName,description,price,shgId,noOfAvailability) >= 1){
             return "Item Added Successfully";
         }else{
             return "Something went wrong !pls check the details again";

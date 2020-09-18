@@ -20,11 +20,11 @@ public class ProductCrudDao<Int> {
 	@Autowired
     JdbcTemplate template;
 	
-	public int addProduct(Int productId,Int catId,String productName,String description,
-			Double price,String shgId){
+	public int addProduct(String catName,String productName,String description,
+			Double price,String shgId,Int noOfAvailability){
 		
-        String query = "INSERT INTO product(productId,catId,productName,description,price,date,shgId) VALUES(?,?,?,?,?,CURRENT_TIMESTAMP,?);";
-        return template.update(query,new Object[] {productId,catId,productName,description,price,shgId});
+        String query = "INSERT INTO product(productId,catName,productName,description,price,date,shgId,noOfAvailability) VALUES(default,?,?,?,?,CURRENT_TIMESTAMP,?,?);";
+        return template.update(query,new Object[] {catName,productName,description,price,shgId,noOfAvailability});
     }
 	/*
 	 * Author Supriya
