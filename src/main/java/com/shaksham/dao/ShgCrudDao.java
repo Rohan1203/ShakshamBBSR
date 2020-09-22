@@ -1,4 +1,4 @@
-package com.example.shaksham.dao;
+package com.shaksham.dao;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.example.shaksham.model.Shg;
+import com.shaksham.model.Shg;
 
 @Repository
 public class ShgCrudDao<INT> {

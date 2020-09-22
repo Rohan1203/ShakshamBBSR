@@ -1,4 +1,4 @@
-package com.example.shaksham.controller;
+package com.shaksham.controller;
 
 
 import java.util.Date;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.shaksham.dao.UserDao;
-import com.example.shaksham.model.User;
+import com.shaksham.dao.UserDao;
+import com.shaksham.model.User;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

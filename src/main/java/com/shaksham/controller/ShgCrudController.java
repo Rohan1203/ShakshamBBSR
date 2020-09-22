@@ -1,4 +1,4 @@
-package com.example.shaksham.controller;
+package com.shaksham.controller;
 
 import java.math.BigInteger;
 import java.security.Timestamp;
@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import com.example.shaksham.dao.ShgCrudDao;
-import com.example.shaksham.model.Shg;
+import com.shaksham.dao.ShgCrudDao;
+import com.shaksham.model.Shg;
 
 
 

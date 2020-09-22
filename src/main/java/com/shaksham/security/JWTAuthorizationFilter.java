@@ -1,4 +1,4 @@
-package com.example.shaksham.security;
+package com.shaksham.security;
 
 import java.io.IOException;
 import java.util.List;

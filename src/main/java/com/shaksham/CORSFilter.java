@@ -1,4 +1,4 @@
-package com.example.shaksham;
+package com.shaksham;
 
 import java.io.IOException;
 

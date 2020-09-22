@@ -1,4 +1,4 @@
-package com.example.shaksham.controller;
+package com.shaksham.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.shaksham.dao.ProductCategoryDao;
-import com.example.shaksham.model.Category;
+import com.shaksham.dao.ProductCategoryDao;
+import com.shaksham.model.Category;
 
 //import com.example.EcomHandcrafting.dao.ProductCategoryDao;
 //import com.example.EcomHandcrafting.model.Category;

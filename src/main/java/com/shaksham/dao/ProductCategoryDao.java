@@ -1,4 +1,4 @@
-package com.example.shaksham.dao;
+package com.shaksham.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.example.shaksham.model.Category;
+import com.shaksham.model.Category;
 
 //import com.example.EcomHandcrafting.model.Category;
 

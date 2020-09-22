@@ -1,4 +1,4 @@
-package com.example.shaksham.model;
+package com.shaksham.model;
 
 import java.math.BigInteger;
 import java.security.Timestamp;

@@ -1,4 +1,4 @@
-package com.example.shaksham.controller;
+package com.shaksham.controller;
 
 import java.security.Timestamp;
 import java.sql.Date;
@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import com.example.shaksham.dao.ProductCrudDao;
+import com.shaksham.dao.ProductCrudDao;
 
 /*
  * author-Preeti098
