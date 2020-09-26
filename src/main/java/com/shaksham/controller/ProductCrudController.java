@@ -3,6 +3,7 @@ package com.shaksham.controller;
 import java.security.Timestamp;
 import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.shaksham.dao.ProductCrudDao;
+import com.shaksham.model.Product;
 
 /*
  * author-Preeti098
@@ -69,6 +72,12 @@ public class ProductCrudController<Int> {
 		
 	}
 	
+	
+
+	@RequestMapping(value="/search/{pname}",method = RequestMethod.GET)
+	 public List<Product> searchProd(@PathVariable Optional<String> productName){
+		return product.searchProduct(productName);
+	}
 	
 	
 	

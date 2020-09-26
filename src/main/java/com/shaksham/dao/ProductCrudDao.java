@@ -2,8 +2,12 @@ package com.shaksham.dao;
 
 import java.security.Timestamp;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -38,7 +42,17 @@ public class ProductCrudDao<Int> {
 	      
 	      
 	}
-
+	
+	/*Author Supriya
+	 * customer module*/
+	 public List<Product> searchProduct(Optional<String> productName){
+		   List<Product> s = new ArrayList<Product>();
+		   String sql = "SELECT * from product  WHERE productName like  '%?1%' ;";  
+		 s = template.query(sql,BeanPropertyRowMapper.newInstance(Product.class));
+		 return s;
+	   }
+		   
+     
 }
 
 
