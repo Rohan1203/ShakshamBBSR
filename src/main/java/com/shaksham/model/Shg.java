@@ -19,16 +19,17 @@ public class Shg {
 	private BigInteger aadharNumber;
 	private BigInteger accountNumber;
 	private String ifscCode;
-	private Timestamp date;
+	private String date;
 	private String currentStatus;
 	private String shgEmail;
+	
 	public Shg() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public Shg(String shgId, String shgName, String address, String blockName, String district, String state,
 			int pincode, BigInteger mobileNumber, int noOfMember, BigInteger aadharNumber, BigInteger accountNumber,
-			String ifscCode, Timestamp date, String currentStatus, String shgEmail) {
+			String ifscCode, String date, String currentStatus, String shgEmail) {
 		super();
 		this.shgId = shgId;
 		this.shgName = shgName;
@@ -118,10 +119,10 @@ public class Shg {
 	public void setIfscCode(String ifscCode) {
 		this.ifscCode = ifscCode;
 	}
-	public Timestamp getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Timestamp date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public String getCurrentStatus() {
@@ -139,8 +140,8 @@ public class Shg {
 	
 	
 }
-
-
+	
+	
 
 
 /*create table shg(

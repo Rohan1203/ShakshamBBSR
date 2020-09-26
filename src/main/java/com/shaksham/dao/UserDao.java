@@ -19,12 +19,12 @@ public class UserDao {
 
 	User login = new User();
 
+	
 
 	public User validateUserCredential(String username, String password) {  
-        String sql = "select username from login where username = ? and password = ?";
+        String sql = "select username, type from login where username = ? and password = ?";
         User result = jdbcTemplate.queryForObject(sql, new Object[]{username, password}, BeanPropertyRowMapper.newInstance(User.class));  
-        result.getUsername();
-        //result.getPassword();
-       return result;
+               
+        return result;
 	}
 }

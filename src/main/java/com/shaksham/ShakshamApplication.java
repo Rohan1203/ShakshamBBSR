@@ -31,6 +31,7 @@ public class ShakshamApplication {
 				.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests()
 				.antMatchers(HttpMethod.POST, "/user").permitAll()
+				.antMatchers(HttpMethod.GET, "/shg/shgrequests").permitAll()
 				.anyRequest().authenticated();
 		}
 	}
