@@ -1,10 +1,17 @@
 package com.shaksham.dao;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import com.shaksham.model.Cart;
+
+
 
 /**
  * 
@@ -34,4 +41,18 @@ public class addCartDao<INT> {
        return template.update(query,new Object[] {productId,customerId,productQuantity,productDetails,price});
     }
 
+	/***
+	 * @view mycart dao
+	 * @param customerId
+	 * 
+	 */
+	public List<Cart> getAll(int customerId) {
+		List<Cart> cart = new ArrayList<Cart>();
+		Cart c=new Cart();
+		c.setCustomerId(customerId);
+		String sql = "select * from Cart where customerId=? ;";
+		cart = template.query(sql,BeanPropertyRowMapper.newInstance(Cart.class), new Object[] {c.getCustomerId()});
+		return cart;
+	}
+	
 }

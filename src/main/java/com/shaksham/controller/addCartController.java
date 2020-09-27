@@ -1,5 +1,7 @@
 package com.shaksham.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -7,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.shaksham.dao.addCartDao;
+import com.shaksham.model.Cart;
 /***
  * 
  * @author preeti-098
@@ -34,7 +38,18 @@ public class addCartController {
         }else{
             return "Something went wrong !Sorry Out of Stock...";
         }
-		
+			
+	}
+	
+	/***
+	 * @view cart controller
+	 * author:Preeti
+	 * @param customerId
+	 * @return
+	 */
+	@RequestMapping(path= "/showcart")
+	public List<Cart> allProduct(@PathVariable int customerId){
+		return addcart.getAll(customerId);
 		
 	}
 
