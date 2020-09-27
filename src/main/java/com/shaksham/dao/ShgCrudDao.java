@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.shaksham.model.Shg;
+import com.shaksham.model.User;
 
 @Repository
 public class ShgCrudDao<INT> {
@@ -46,6 +47,22 @@ public class ShgCrudDao<INT> {
 		return jdbcTemplate.update(sql, new Object[] {s.getShgId()});
 	      
 	      
+	}
+	
+	/*
+	 * Author Puspa
+	 */
+	
+	public String verifySHG(String shgId) {
+		  String sql = "select shgId from govt_shg where shgId = ?";
+	        Shg result = jdbcTemplate.queryForObject(sql, new Object[]{shgId}, BeanPropertyRowMapper.newInstance(Shg.class));  
+	        String id = result.getShgId();
+//	        if(id == shgId) {
+//	        	return "Approved";
+//	        } else {
+//	        	return "Declined";
+//	        }
+	        return result.getShgId();
 	}
 
 }

@@ -73,10 +73,21 @@ public class ShgCrudController<INT> {
 	@GetMapping(path= "/shgrequests")
 	public List<Shg> allShg(){
 		return shg.getAllRequests();
-		
 	}
-
 	
 	
+	
+	@GetMapping(value="/verifySHG/{shgId}")
+	public String verifyShg(@PathVariable String shgId) {
+		String result;
+		
+			result = shg.verifySHG(shgId);
+			
+			if(shgId.equals(result)) {
+				return "Approved";
+			} else {
+				return "Declined";
+			}
+	}
 
 }
