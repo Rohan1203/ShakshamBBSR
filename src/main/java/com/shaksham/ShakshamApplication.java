@@ -32,6 +32,7 @@ public class ShakshamApplication {
 				.authorizeRequests()
 				.antMatchers(HttpMethod.POST, "/user").permitAll()
 				.antMatchers(HttpMethod.GET, "/shg/shgrequests").permitAll()
+				.antMatchers(HttpMethod.GET, "/shg/verifySHG/{shgId}").permitAll()
 				.anyRequest().authenticated();
 		}
 	}
