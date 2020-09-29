@@ -55,7 +55,7 @@ public class ShgCrudController<INT> {
 	/*
 	 * Author Supriya
 	 */
-	@RequestMapping(value="/shggg/{sid}",method = RequestMethod.GET)
+	@RequestMapping(value="/shgdelete/{sid}",method = RequestMethod.GET)
 	public String shgDelete(@PathVariable String sid) {
 		int a;
 		a=shg.deleteShg(sid);
