@@ -127,4 +127,21 @@ public class ShgCrudDao<INT> {
 	        }
 	}
 
+	
+	public Shg findById(String id){
+		String sql = "select * from shg where shgId = ?";
+		Shg shg = jdbcTemplate.queryForObject(sql, new Object[]{id}, BeanPropertyRowMapper.newInstance(Shg.class));
+		return shg;
+	}
+	
+	public String UpdateShg(Shg shg) {
+		System.out.print(shg.getShgId());
+		String sql = "update shg set shgName = ? where shgId = ?;";
+		Integer result = jdbcTemplate.update(sql, new Object[]{shg.getShgName(),shg.getShgId()});
+		if(result == 1)
+		return "success";
+		else
+		return "failure";
+		
+	}
 }
