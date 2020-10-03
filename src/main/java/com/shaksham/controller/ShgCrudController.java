@@ -38,7 +38,7 @@ public class ShgCrudController<INT> {
 	}
 	
 	@RequestMapping(value="/addshg/{shgId}/{shgName}/{address}/{blockName}/{district}/{state}/{pincode}/"
-			+ "{mobileNumber}/{noOfMember}/{aadharNumber}/{accountNumber}/{ifscCode}/{currentStatus}/{shgEmail}")
+			+ "{mobileNumber}/{noOfMember}/{aadharNumber}/{accountNumber}/{ifscCode}/{shgEmail}")
 	@ResponseBody
 	public String addshg(@PathVariable String shgId,@PathVariable String shgName,@PathVariable String address,@PathVariable String blockName,@PathVariable String district,
 			@PathVariable String state,@PathVariable INT pincode,@PathVariable BigInteger mobileNumber,@PathVariable INT noOfMember,
@@ -53,6 +53,7 @@ public class ShgCrudController<INT> {
         }
 			
 		}
+	
 	
 	/*
 	 * Author Supriya
