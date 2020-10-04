@@ -31,14 +31,22 @@ public class addCartController {
     public String addProduct(@PathVariable int productId,
     		@PathVariable int customerId,@PathVariable int productQuantity,
     		@PathVariable String productDetails,@PathVariable Double price){
+		int checkavailability=addcart.checkCart(productId);
+		System.out.println(checkavailability);
+		
+		if(checkavailability !=0) {
 		
 		
        if(addcart.addToCart(productId,customerId,productQuantity,productDetails,price) >= 1){
             return "Item Added to Cart Successfully";
         }else{
-            return "Something went wrong !Sorry Out of Stock...";
+            return "Something went wrong !";
         }
-			
+		
+		}
+		else {
+			return "out of stock";
+		}
 	}
 	
 	/***

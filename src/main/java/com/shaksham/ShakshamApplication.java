@@ -12,6 +12,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.shaksham.security.JWTAuthorizationFilter;
 
 @SpringBootApplication
+//@SpringBootTest(classes=com.shaksham.path.class)
+//@SpringBootTest
+
 public class ShakshamApplication {
 
 	public static void main(String[] args) {

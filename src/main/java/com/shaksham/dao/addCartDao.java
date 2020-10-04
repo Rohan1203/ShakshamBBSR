@@ -9,7 +9,9 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+//import com.example.EcomHandcrafting.model.Product;
 import com.shaksham.model.Cart;
+import com.shaksham.model.Product;
 
 
 
@@ -27,19 +29,30 @@ public class addCartDao<INT> {
 	@Autowired
     JdbcTemplate template;
 	
-	public int addToCart(int productId,int customerId,int productQuantity,
-			String productDetails,Double price){
+	public int checkCart(int productId) {
+		
+		 Product p = new Product(); 
+		 p.setProductId(productId); 
+		 String sql="select noOfAvailability from product where productId= ?;"; 
+		 // noOfAvailability=template.queryForObject(sql,new Object[]{p.getNoOfAvailability()}); //template.queryForObject
+		 return template.queryForObject(sql, new Object[] {productId},(Integer.class));
+		 
+	}
+
+	public int addToCart(int productId, int customerId, int productQuantity, String productDetails, Double price) {
+
 		
 		/*
-		 * Product p = new Product(); p.setProductId(productId); String sql =
-		 * "select noOfAvailability from product where productid= ?;"; return
-		 * template.update(sql, new Object[] {p.getProductId()});
+		 * Product p = new Product(); p.setProductId(productId); String
+		 * sql="select noOfAvailability from product where productId= ?;"; String
+		 * noOfAvailability=template.queryForObject(sql,new
+		 * Object[]{p.getNoOfAvailability()}); //template.queryForObject
+		 * System.out.println(noOfAvailability);
 		 */
-		
-        String query = "INSERT INTO cart(cartId,productId,customerId,productQuantity,productDetails,date,price) VALUES(default,?,?,?,?,CURRENT_TIMESTAMP,?) "
-        		+ " select noOfAvailability from shaksham.product where productId=?;";
-       return template.update(query,new Object[] {productId,customerId,productQuantity,productDetails,price});
-    }
+
+		String query = "INSERT INTO cart(idCart,productId,customerId,productQuantity,productDetails,date,price) VALUES(default,?,?,?,?,CURRENT_TIMESTAMP,?);";
+		return template.update(query, new Object[] { productId, customerId, productQuantity, productDetails, price });
+	}
 
 	/***
 	 * @view mycart dao
