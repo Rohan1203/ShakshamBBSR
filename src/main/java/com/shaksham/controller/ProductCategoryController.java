@@ -76,4 +76,16 @@ public class ProductCategoryController {
 			 return "catId Not Found";
 		 }
 	 }
+	 
+/*Author Supriya 
+ * code for search by category*/
+		
+		
+		 @RequestMapping(value="/search/{catName}",method=RequestMethod.GET)
+		
+		 public String getDataId(@PathVariable final String catName) {
+		 return productCategoryDao.readByName(catName);
+		
+		 }
+	 
 }

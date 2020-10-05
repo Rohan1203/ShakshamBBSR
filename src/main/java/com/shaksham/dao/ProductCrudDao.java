@@ -44,13 +44,13 @@ public class ProductCrudDao<Int> {
 	}
 	
 	/*Author Supriya
-	 * customer module*/
+	 * customer module
 	 public List<Product> searchProduct(Optional<String> productName){
 		   List<Product> s = new ArrayList<Product>();
 		   String sql = "SELECT * from product  WHERE productName like  '%?1%' ;";  
 		 s = template.query(sql,BeanPropertyRowMapper.newInstance(Product.class));
 		 return s;
-	   }
+	   }*/
 		   
      
 }

@@ -74,10 +74,10 @@ public class ProductCrudController<Int> {
 	
 	
 
-	@RequestMapping(value="/search/{pname}",method = RequestMethod.GET)
+	/*@RequestMapping(value="/search/{pname}",method = RequestMethod.GET)
 	 public List<Product> searchProd(@PathVariable Optional<String> productName){
 		return product.searchProduct(productName);
-	}
+	}*/
 	
 	
 	

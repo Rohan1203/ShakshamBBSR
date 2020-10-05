@@ -55,4 +55,13 @@ public int update(int catId, String catName, String catType){
    return template.update(SQL, new Object[] {catId, catName, catType});
     
 }
+/*Author Supriya 
+ * code for search by category*/
+
+
+public String readByName(String catName) {
+    String sql = "SELECT catName FROM category WHERE catName=? ;";
+return template.queryForObject(sql, new Object[]{catName},(String.class));
+          
+}
 }
