@@ -20,7 +20,6 @@ public class ShakshamApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ShakshamApplication.class, args);
 		System.out.print("Project Initialized...");
-		System.out.print("Test Commit...");
 	}
 	
 	
@@ -36,6 +35,8 @@ public class ShakshamApplication {
 				.antMatchers(HttpMethod.POST, "/user").permitAll()
 				.antMatchers(HttpMethod.GET, "/shg/shgrequests").permitAll()
 				.antMatchers(HttpMethod.GET, "/shg/verifySHG/{shgId}").permitAll()
+				.antMatchers(HttpMethod.POST, "/register").permitAll()
+				.antMatchers(HttpMethod.GET, "/getusername/{email}").permitAll()
 				.anyRequest().authenticated();
 		}
 	}
